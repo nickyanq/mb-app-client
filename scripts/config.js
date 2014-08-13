@@ -3,5 +3,5 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var appurl = 'http://localhost/fdl/fdl-server/public/fdl/';
+var appurl = 'http://localhost/mb-app-server/public/fdl/';
 

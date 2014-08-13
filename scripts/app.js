@@ -4,7 +4,7 @@ var app = angular.module('myApp', ['ngRoute']);
 app.config(function($routeProvider, $locationProvider, $provide, $httpProvider) {
     $routeProvider
             .when('/', {
-                templateUrl: 'views/fdl.html',
+                templateUrl: 'views/home.html',
                 controller: 'homeController',
                 requireLogin: false,
                 forbidLogged: false,
