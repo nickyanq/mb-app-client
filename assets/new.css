@@ -1,0 +1,61 @@
+/**
+ * Class : new.css
+ * Created at 18-07-2014 4:52:03 PM
+ * 
+ * @author Corneliu Iancu - Opti Systems
+ * @contact corneliu.iancu@opti.ro
+ */
+
+
+#frontpage{
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+#frontpage > table{
+	width: 100%;
+	text-align: center;
+	height: 50px;
+	background: #00b7ea; /* Old browsers */
+	background: -moz-linear-gradient(top,  #00b7ea 0%, #009ec3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00b7ea), color-stop(100%,#009ec3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #00b7ea 0%,#009ec3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #00b7ea 0%,#009ec3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #00b7ea 0%,#009ec3 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #00b7ea 0%,#009ec3 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=0 ); /* IE6-9 */
+
+}
+#frontpage > table td a{
+	color :white;
+
+}
+#frontpage > table td h3{
+	margin: 0;
+	padding: 0;
+}
+#frontpage > table td{
+	vertical-align: middle;
+
+}
+#frontpage > table td i {vertical-align: middle;}
+#frontpage-contents{
+	overflow-y: scroll;
+	background-color: #f5f8fa;
+
+	height: calc(100% - 50px);
+}
+.ui-panel-inner{
+	padding: 0 !important;
+	
+}
+
+#right-panel, #left-panel{
+	background: #434b5c !important;
+}

@@ -1,0 +1,29 @@
+<div class="container-fluid" style="padding-top: 15px;">
+	<form class="registrationForm" name="regform">
+		{{myuser}}
+		<div class="input-medium">
+			<input class="input-xlarge" name="firstname" ng-model="user.firstname" type="text" placeholder="Firstname" required="">
+			<span class="alert-danger" ng-show="regform.firstname.$invalid || regform.firstname.$pristine">This field is required.</span>
+		</div>
+		<div class="input-medium">
+			<input class="input-xlarge" name="lastname" ng-model="user.lastname" type="text" placeholder="Lastname" required="">
+			<span class="alert-danger" ng-show="regform.lastname.$invalid || regform.lastname.$pristine">This field is required.</span>
+		</div>
+		<div class="input-medium">
+			<input class="input-xlarge" name="email" ng-model="user.email" type="email" placeholder="Email address">
+			<span class="alert-danger" ng-show="regform.email.$error.email">This is not valid email!</span>
+			<span class="alert-danger" ng-show="regform.email.$pristine">This field is required.</span>
+		</div>
+		<div class="input-medium">
+			<input class="input-xlarge" name="username" ng-model="user.username" type="text" placeholder="Username" ng-minlength="6" required="">
+			<span class="alert-danger" ng-show="regform.username.$error.minlength">Minimum length is 6</span>
+		</div>
+		<div class="input-medium">
+			<input class="input-xlarge" name="password" ng-model="user.password" type="password" placeholder="Password" ng-minlength="6" required="">
+			<span class="alert-danger" ng-show="regform.password.$error.minlength">Minimum length is 6</span>
+		</div>
+		<a href="javascript:void(0)" class="btn btn-primary btn-large"  ng-disabled="regform.$invalid" ng-click="register()">Register</a>
+                <div class="space10"></div>
+                <p class="alert-success" style="float: left;" ng-show="true">You are being redirected...</p>
+	</form>
+</div>

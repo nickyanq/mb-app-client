@@ -1,0 +1,33 @@
+<div class="login-container">
+
+	<div class="login-box">
+		<h3>Login with</h3>
+		<legend></legend>
+		<div id="social-login"></div>
+		<form name="loginform" id="loginform">
+			<fieldset>
+
+				<label>Username</label>
+				<input type="text" ng-model="user.username" name="username" placeholder="Username" required="">
+				<span class="alert-danger" ng-show="loginform.username.$invalid || loginform.username.$pristine">This field is required.</span>
+				<div class="space10"></div>
+				<label>Password</label>
+				<input type="password" ng-model="user.password" name="password" placeholder="Password" required="">
+				<span class="alert-danger" ng-show="loginform.password.$invalid || loginform.password.$pristine">This field is required.</span>
+				<div class="space10"></div>
+
+				<a href="javascript:void(0)" class="btn btn-primary btn-large"  ng-disabled="loginform.$invalid" ng-click="login()">Login</a>
+
+				<div class="space10"></div>
+				<span class="alert-warning"><b>{{logMessage.message}}</b></span>
+
+			</fieldset>
+		</form>
+
+	</div>
+
+
+
+
+
+</div>

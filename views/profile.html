@@ -1,0 +1,64 @@
+<h1>Profile page</h1>
+<form name="profileform">
+    <table id="profileHolder">
+        <tr>
+            <td>
+                <span>Firstname: </span>
+            </td>
+            <td>
+                <input type="text" name="firstname" ng-model="userService.currentUser.firstname" placeholder="Firstname" required strings>
+                <span class="alert-danger" ng-show="profileform.firstname.$invalid">This field has errors.</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Lastname: </span>
+            </td>
+            <td>
+                <input type="text" name="lastname" ng-model="userService.currentUser.lastname" placeholder="Lastname" required strings>
+                <span class="alert-danger" ng-show="profileform.lastname.$error.strings">This field has errors.</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Email </span>
+            </td>
+            <td>
+                <input type="email" name="email" ng-model="userService.currentUser.email" placeholder="Email" required>
+                <span class="alert-danger" ng-show="profileform.email.$error.email">This is not valid email!</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Username </span>
+            </td>
+            <td>
+                <input type="text" name="username" ng-model="userService.currentUser.username" placeholder="Username" required ng-minlength="3">
+				<span class="error alert-danger" ng-show="profileform.username.$error.minlength">Too short!</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Last login: </span>
+            </td>
+            <td>
+                <span>{{userService.currentUser.lastlogin.date}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Created date </span>
+            </td>
+            <td>
+                <span>{{userService.currentUser.createdate.date}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Save changessss" ng-disabled="profileform.$invalid" ng-click="saveProfile()">
+            </td>
+        </tr>
+
+    </table>
+	<p class="success alert-success" ng-show="successUpdate">Succesfully updated.</p>
+</form>

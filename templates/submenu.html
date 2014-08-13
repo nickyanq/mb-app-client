@@ -1,0 +1,25 @@
+<div class="toggled-menu">
+    <!--<span class='glyphicon glyphicon-phone fa-big' style='color :white'></span>-->
+    <div class='listing-container'>
+        <div class='listing-item listing-title'>
+            <table>
+                <tr>
+                    <td><i class="fa fa-barcode fa-big fa-middle"></i></td>
+                    <td>Angular Shop</td>
+                </tr>
+            </table>
+        </div>
+        <div class='listing-item' ng-repeat='category in categories'>
+            <table>
+                <tr>
+                    <td><i class="fa {{category.iconClass}} fa-middle fa-big"></i></td>
+                    <td><span>{{category.name}}</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+

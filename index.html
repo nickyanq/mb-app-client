@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link  href="assets/main.css" rel="stylesheet">
+		<link  href="assets/new.css" rel="stylesheet">
+		<!-- JQuery AND JQueryMobile -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+		<!--GOOGLE FONTS OpenSansCodensed--> 
+		<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+		<!--FONT AWESOME--> 
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<!--BOOTSTRAP-->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<!--ANGULAR--> 
+		<script src="//code.angularjs.org/1.2.0rc1/angular.min.js"></script>
+		<script type="text/javascript" src="//code.angularjs.org/1.2.0rc1/angular-route.min.js"></script>
+		<script type="text/javascript" src="//code.angularjs.org/1.2.0rc1/angular-resource.min.js"></script> 
+		
+		<!-- DATEFORMAT -->
+		<script type="text/javascript" src="scripts/vendor/dateformat.js"></script> 
+
+		<script type="text/javascript" src="scripts/config.js"></script>
+		<script type="text/javascript" src="scripts/app.js"></script>
+		<script type="text/javascript" src="scripts/controllers/main.js"></script>
+		<script type="text/javascript" src="scripts/directives/myDirective.js"></script>
+		<script type="text/javascript" src="scripts/filters/myFilter.js"></script>
+
+		<script type="text/javascript" src="scripts/services/myService.js"></script>
+		<script type="text/javascript" src="scripts/services/fetcher.js"></script>
+		<script type="text/javascript" src="scripts/services/user.js"></script>
+		<script type="text/javascript" src="scripts/services/configService.js"></script>
+	</head>
+	<body>
+
+		<div data-role="page" id="pageone">
+			<div data-role="panel" id="left-panel" data-position="left" data-display="overlay" ng-controller='toggleMenuController'> 
+				<menu categories="categories"></menu>
+			</div> 
+			<div id="frontpage">
+				<table>
+					<tr>
+						<td ng-click="slider.switch(1)" style="z-index: 10"><a href="#left-panel"><i class="fa fa-bars fa-big" ></i></a></td>
+						<td ng-click="locationService.redirect('/login')"><a href="#/"><h3>Application</h3></a></td>
+						<td ng-click="slider.switch(2)"><a href="#right-panel"><i class="fa fa-user fa-big"></i></a></td>
+					</tr>
+				</table>
+				<div id="frontpage-contents">
+					<div ng-view class="padd-bottom-15">
+
+					</div>
+				</div>
+			</div>
+			<div data-role="panel" id="right-panel" data-position="right" data-display="overlay" ng-controller='toggleMenuController'>
+				<account-panel categories="accountCategories" loggedCategories="loggedCategories" ></account-panel>
+			</div>
+		</div> 
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<div class="toggled-menu">
+    <!--<span class='glyphicon glyphicon-phone fa-big' style='color :white'></span>-->
+    <div class='listing-container'>
+        <div class='listing-item listing-title'>
+            <table>
+                <tr>
+                    <td><i class="fa fa-barcode fa-big fa-middle"></i></td>
+                    <td>Account</td>
+                </tr>
+            </table>
+        </div>
+        <div class='listing-item' ng-repeat='NotLoggedCategory in categories' ng-show="!userService.currentUser.logged">
+            <table>
+                <tr>
+                    <td><i class="fa {{NotLoggedCategory.iconClass}} fa-middle fa-big"></i></td>
+                    <td ng-click="locationService.redirect(NotLoggedCategory.link)"><span>{{NotLoggedCategory.name}}</span></td>
+                </tr>
+            </table>
+        </div>
+        <div class='listing-item' ng-repeat='loggedCategory in loggedCategories' ng-show="userService.currentUser.logged">
+            <table>
+                <tr>
+                    <td><i class="fa {{loggedCategory.iconClass}} fa-middle fa-big"></i></td>
+                    <td ng-click="locationService.redirect(loggedCategory.link)"><span>{{loggedCategory.name}}</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

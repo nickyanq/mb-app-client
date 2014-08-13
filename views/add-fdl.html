@@ -1,0 +1,39 @@
+
+
+<div class="container">
+	<h3>Enter your f***dislife.</h3>
+	<form role="form" name="fdladdform">
+		<div class="row form-group">
+			<div class="col-xs-12">
+				<input type="text" name="title" class="form-control" ng-model="fdl.title" placeholder="Fdl title..." required>
+			</div>
+			<p class=" col-xs-12 text-error text-danger" ng-show="fdladdform.title.$invalid">Invalid title provided.</p>
+		</div>
+		<div class="row form-group">
+			<div class="col-xs-12">
+				<select class="form-control" name="category" ng-model="fdl.category" required="" placeholder="Select a category">
+					<option value="{{cat.id}}" ng-repeat="cat in categories">{{cat.title}}</option>
+				</select>
+			</div>
+			<p class=" col-xs-12 text-error text-danger" ng-show="fdladdform.category.$invalid">Please select a category.</p>
+		</div>
+
+		<div class="row">
+		</div>
+		<div class="row form-group" >
+			<div class="col-xs-12">
+				<textarea class="form-control" name="content" ng-model="fdl.content" id="TextArea" rows="6" placeholder="Enter your FDL" ng-max-length="244" required=""></textarea>
+			</div>
+			<p class=" col-xs-12 text-error text-danger" ng-show="fdladdform.content.$invalid">Max length is 244 characters.</p>
+		</div>
+
+		<div class="row form-group" >
+			<div class="col-xs-12">
+				<button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="fdladdform.$invalid" ng-click="submit()">Submit FDL</button>
+			</div>
+		</div>
+		<div class="alert alert-success" ng-show="successfullyAdded">
+			<strong>Well done!</strong> You successfully added a fdl.
+		</div>
+	</form>
+</div>
