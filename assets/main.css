@@ -367,8 +367,8 @@ html, body {height: 100%}
     border-bottom: 1px solid lightgray;
     border-radius: 3px;
     padding-bottom: 5px;
-    -webkit-transition: height 0.5s,-webkit-transform 0.5s;  /* For Safari 3.1 to 6.0 */
-    transition: height 0.5s, transform 0.5s;
+    -webkit-transition: height 1.5s,-webkit-transform 1.5s;  /* For Safari 3.1 to 6.0 */
+    transition: height 1.5s, transform 1.5s;
 }
 
 .cilinefpage p{
