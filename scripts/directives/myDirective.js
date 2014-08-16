@@ -105,7 +105,7 @@ app.directive('condition', ['sliderMenuService', '$timeout', function(sliderMenu
                 if (scope.item.transition == true) {
                     element[0].parentElement.style.height = 0;
                     $timeout(function() {
-                        element[0].parentElement.style.height = '100px';
+                        element[0].parentElement.style.height = '150px';
                     }, 100);
 
 
