@@ -1,15 +1,19 @@
-<div class="cilinefpage" ng-repeat="item in dataFeed">
-	
-	<p><b>{{item.title}}</b></p>
-	<p class="fdl-content">{{item.content}}</p>
-	<div class="author">Author : {{item.user.firstname}} {{item.user.lastname}} </div>
-	<div class="at"><!-- 01/01/2013 12:00 -->{{item.create_date.date| something }}</div>
-	<div class="share">
-		<i class="fa fa-facebook-square fa-medium"></i>
-		<i class="fa fa-twitter-square fa-medium"></i>
-		<i class="fa fa-google-plus-square fa-medium"></i>
-	</div>
-	<div class="rating">
-		<i class="fa fa-thumbs-up fa-medium" ng-class="{blueVote : item.upVoted}" ng-click="vote(1,item.id,$index)"></i>({{item.upVotes}}) 
-		<i class="fa fa-thumbs-down fa-medium" ng-class="{blueVote : item.downVoted}" ng-click="vote(2,item.id,$index)"></i>({{item.downVotes}})</div>
+<div class="cilinefpage" ng-repeat="item in dataFeed" id="{{item.id}}">
+    
+    <div ng-class="{transitionElement : item.transition}" class="noteHolder" condition info="item">
+        
+    </div>
+    
+<!--    <p><b>{{item.title}}</b></p>
+    <p class="fdl-content">{{item.content}}</p>
+    <div class="author">Author : {{item.user.firstname}} {{item.user.lastname}} </div>
+    <div class="at"> 01/01/2013 12:00 {{item.create_date.date| something }}</div>-->
+    <div class="share">
+        <i class="fa fa-facebook-square fa-medium"></i>
+        <i class="fa fa-twitter-square fa-medium"></i>
+        <i class="fa fa-google-plus-square fa-medium"></i>
+    </div>
+    <div class="rating">
+        <i class="fa fa-thumbs-up fa-medium" ng-class="{blueVote : item.upVoted}" ng-click="vote(1, item.id, $index)"></i>({{item.upVotes}}) 
+        <i class="fa fa-thumbs-down fa-medium" ng-class="{blueVote : item.downVoted}" ng-click="vote(2, item.id, $index)"></i>({{item.downVotes}})</div>
 </div>

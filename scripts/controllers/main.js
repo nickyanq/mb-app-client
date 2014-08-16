@@ -2,13 +2,15 @@
 
 app.controller('homeController', ['$scope', 'userService', 'locationService', 'fetch', function($scope, userService, locationService, fetch) {
         $scope.locationService = locationService;
-
-//		
+        $scope.dataFeed = [];
 
         var pull = function() {
             fetch.pullFdls().then(function(d) {
-                if(d.data.code !== 0){
-                    processFdls(d.data.fdls);
+                if (d.data.code !== 0) {
+
+//                    console.log(d.data);
+                    console.log(d.data.fdls);
+                    processFdls(d.data.fdls,'unshift');
                 } else {
                     console.log('am prins cazul false');
                 }
@@ -17,32 +19,46 @@ app.controller('homeController', ['$scope', 'userService', 'locationService', 'f
         };
         pull();
 
-        var processFdls = function(d) {
-			if(d != undefined) ;
-            for (var i = 0; i < d.length; i++) {
-                d[i].upVotes = 0;
-                d[i].downVotes = 0;
-                for (var j = 0; j < d[i].votes.length; j++) {
-                    if (d[i].votes[j].type === 1 && d[i].votes[j].status == true) {
-                        d[i].upVotes++;
-                        if (d[i].votes[j].user_id == userService.currentUser.id) {
-                            d[i].upVoted = true;
+        var processFdls = function(d,typeofpush) {
+            if (d != undefined)
+                for (var i = 0; i < d.length; i++) {
+                    d[i].upVotes = 0;
+                    d[i].downVotes = 0;
+                    if (d[i].votes != undefined)
+                        for (var j = 0; j < d[i].votes.length; j++) {
+                            if (d[i].votes[j].type === 1 && d[i].votes[j].status == true) {
+                                d[i].upVotes++;
+                                if (d[i].votes[j].user_id == userService.currentUser.id) {
+                                    d[i].upVoted = true;
+                                }
+                            }
+                            if (d[i].votes[j].type === 2 && d[i].votes[j].status == true) {
+                                d[i].downVotes++;
+                                if (d[i].votes[j].user_id == userService.currentUser.id) {
+                                    d[i].downVoted = true;
+                                }
+                            }
                         }
-                    }
-                    if (d[i].votes[j].type === 2 && d[i].votes[j].status == true) {
-                        d[i].downVotes++;
-                        if (d[i].votes[j].user_id == userService.currentUser.id) {
-                            d[i].downVoted = true;
-                        }
-                    }
                 }
+
+            for (var i = 0; i < d.length; i++) {
+                d[i].avatar = 'http://localhost/mb-app-server/public/images/profile-photos/default-avatar.png';
+                if (typeofpush == 'unshift') {
+                    d[i].transition = true;
+                    $scope.dataFeed.unshift(d[i]);
+                } else {
+                    d[i].transition = false;
+                    $scope.dataFeed.push(d[i]);
+                }
+
             }
-            $scope.dataFeed = d;
+
+//            $scope.dataFeed = d;
         };
 
         fetch.getAll().then(function(d) {
 //            if (userService.currentUser.logged === true) {
-                processFdls(d.data);
+            processFdls(d.data);
 //            }
 
         });

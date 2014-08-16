@@ -5,7 +5,7 @@
  */
 
 
-app.filter('something', function() {
+app.filter('datefilter', function() {
 	return function(input) {
 		var d = new Date(input);
 		return (d.format('dd/mm/yyyy H:M'));

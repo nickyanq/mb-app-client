@@ -1,0 +1,10 @@
+<div class="fdl-avatar">
+    <img ng-src="{{item.avatar}}" height="100%" alt="Avatar">
+</div>
+<div style="height: 50px;width: calc(100% - 50px);border: 0px solid red;display: inline-block;vertical-align: top;">
+
+    Author : {{item.user.firstname}} {{item.user.lastname}} <br/>
+    Date Created : {{item.create_date.date}}<br/>
+    Title : <b>{{item.title}}</b>
+</div>
+<p class="fdl-content">{{item.content}}</p>

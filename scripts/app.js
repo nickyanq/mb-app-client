@@ -85,10 +85,14 @@ app.config(function($routeProvider, $locationProvider, $provide, $httpProvider) 
                 }
             });
             $locationProvider.html5Mode(true);
+            
+            
 });
 
 app.run(function($rootScope, $location, $timeout, userService, appCache) {
-
+    
+    $rootScope.appimages = 'http://localhost/mb-app-server/public/images/';
+    
     $rootScope.$on("$routeChangeStart", function(event, next, current) {
         $('#loadingscreen').show();
     });
