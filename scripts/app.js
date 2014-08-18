@@ -91,6 +91,10 @@ app.config(function($routeProvider, $locationProvider, $provide, $httpProvider) 
 
 app.run(function($rootScope, $location, $timeout, userService, appCache) {
     
+	$rootScope.$on('$viewContentLoaded', function() {
+      $templateCache.removeAll();
+	});
+	
     $rootScope.appimages = 'http://localhost/mb-app-server/public/images/';
     
     $rootScope.$on("$routeChangeStart", function(event, next, current) {
