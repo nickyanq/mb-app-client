@@ -1,13 +1,13 @@
 <div class="cilinefpage" ng-repeat="item in dataFeed" id="{{item.id}}">
-    
+
     <div ng-class="{transitionElement : item.transition}" class="noteHolder" condition info="item">
-        
+
     </div>
-    
-<!--    <p><b>{{item.title}}</b></p>
-    <p class="fdl-content">{{item.content}}</p>
-    <div class="author">Author : {{item.user.firstname}} {{item.user.lastname}} </div>
-    <div class="at"> 01/01/2013 12:00 {{item.create_date.date| something }}</div>-->
+
+	<!--    <p><b>{{item.title}}</b></p>
+		<p class="fdl-content">{{item.content}}</p>
+		<div class="author">Author : {{item.user.firstname}} {{item.user.lastname}} </div>
+		<div class="at"> 01/01/2013 12:00 {{item.create_date.date| something }}</div>-->
     <div class="share">
         <i class="fa fa-facebook-square fa-medium"></i>
         <i class="fa fa-twitter-square fa-medium"></i>
@@ -16,4 +16,13 @@
     <div class="rating">
         <i class="fa fa-thumbs-up fa-medium" ng-class="{blueVote : item.upVoted}" ng-click="vote(1, item.id, $index)"></i>({{item.upVotes}}) 
         <i class="fa fa-thumbs-down fa-medium" ng-class="{blueVote : item.downVoted}" ng-click="vote(2, item.id, $index)"></i>({{item.downVotes}})</div>
+</div>
+<div style="position: fixed;bottom: 15px;z-index: 3;height: 100px;background: rgba(0,0,0,0.8);width: calc(100% - 30px);" id="console_logging">
+	<div style="padding-left: 15px;background: lightgray;color : black;font-weight: bold; ">Console: </div>
+	<div style="overflow: scroll;height: 85px;">
+		<div style="padding-left: 15px;height: 25px;border-bottom: 1px solid white; color : white;" ng-repeat="item in dataFeed">
+			<span>Author : </span> {{item.user.username}} 
+			<span>Title : </span> {{item.title}} 
+		</div>
+	</div>
 </div>

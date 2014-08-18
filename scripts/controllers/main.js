@@ -4,6 +4,15 @@ app.controller('homeController', ['$scope', 'userService', 'locationService', 'f
         $scope.locationService = locationService;
         $scope.dataFeed = [];
 
+		if (!console_logging) {
+			$("#console_logging").hide();
+			console.log($("#console_logging"));
+			console.log('Console is hidden.');
+		} else {
+			console.log('Console is displayed.');
+		}
+
+
         var pull = function() {
             fetch.pullFdls().then(function(d) {
                 if (d.data.code !== 0) {

@@ -388,6 +388,7 @@ html, body {height: 100%}
     padding: 5px;
 }
 .cilinefpage .fdl-content{
+	word-break: break-all;
     background: rgba(85, 172, 238, 0.1);
     color : #66757f;
     /*font-weight: bold;*/

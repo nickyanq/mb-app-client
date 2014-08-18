@@ -12,7 +12,6 @@ app.factory('configFactory',
                     ];
                 };
 
-
                 return obj;
             }]
         );
